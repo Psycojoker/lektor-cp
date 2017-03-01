@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import shutil
+import os
 
 from lektor.publisher import Publisher
 from lektor.pluginsystem import Plugin
@@ -22,5 +22,5 @@ class CpPlugin(Plugin):
 
 class CpPublisher(Publisher):
     def publish(self, target_url, credentials=None, server_info=None, **extra):
-        shutil.copytree(self.output_path, target_url.path)
+        os.system("cp -av %s %s" % (self.output_path, target_url.path))
         yield "success"
