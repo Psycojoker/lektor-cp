@@ -22,6 +22,6 @@ class CpPlugin(Plugin):
 
 class CpPublisher(Publisher):
     def publish(self, target_url, credentials=None, server_info=None, **extra):
-        yield "cp -av %s %s" % (self.output_path, target_url.path)
-        os.system("cp -av %s %s" % (self.output_path, target_url.path))
+        yield "cp -av %s/* %s" % (self.output_path, target_url.path)
+        os.system("cp -av %s/* %s" % (self.output_path, target_url.path))
         yield "success"
