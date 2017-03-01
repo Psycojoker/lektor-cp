@@ -2,7 +2,7 @@
 
 import shutil
 
-from lektor.publisher import Publisher, PublishError
+from lektor.publisher import Publisher
 from lektor.pluginsystem import Plugin
 
 
@@ -22,4 +22,4 @@ class CpPlugin(Plugin):
 
 class CpPublisher(Publisher):
     def publish(self, target_url, credentials=None, server_info=None, **extra):
-        bucket_uri, self.key_prefix = self.split_bucket_uri(target_url)
+        print target_url
