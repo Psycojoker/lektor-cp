@@ -22,4 +22,5 @@ class CpPlugin(Plugin):
 
 class CpPublisher(Publisher):
     def publish(self, target_url, credentials=None, server_info=None, **extra):
-        yield target_url.path
+        shutil.copytree(self.output_path, target_url.path)
+        yield "success"
