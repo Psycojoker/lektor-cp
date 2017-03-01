@@ -15,7 +15,4 @@ setup(
             'cp = lektor_cp:CpPlugin',
         ]
     },
-    install_requires=[
-        'Lektor',
-    ],
 )
