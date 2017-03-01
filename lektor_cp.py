@@ -22,4 +22,4 @@ class CpPlugin(Plugin):
 
 class CpPublisher(Publisher):
     def publish(self, target_url, credentials=None, server_info=None, **extra):
-        print target_url
+        yield target_url
